@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           <button onClick={toggleDarkMode} className="dark-mode-toggle">
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
+          
         </div>
       </nav>
 

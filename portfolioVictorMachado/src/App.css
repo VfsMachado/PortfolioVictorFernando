@@ -1,42 +1,321 @@
-#root {
-  max-width: 1280px;
+/* ===== VARIÁVEIS GLOBAIS ===== */
+/* Tema claro */
+:root {
+  --section-bg-odd: #f0f0f3;
+  --section-bg-even: #d1d1d5;
+  --section-text-odd: #333333;
+  --section-text-even: #1a1a1a;
+
+
+  /* Cores principais */
+  --primary: #5F00A8;       /* Roxo principal */
+  --primary-light: #8A2BE2; /* Roxo mais claro */
+  --secondary: #A85F00;     /* Âmbar */
+  --accent: #9370DB;        /* Roxo médio */
+
+  /* Cores neutras (tema claro) */
+  --bg: #f5f5f7;            /* Fundo cinza claro */
+  --text: #212529;          /* Texto quase preto */
+  --card-bg: #ffffff;       /* Fundo de cards branco */
+  --border: #dee2e6;        /* Bordas cinza claro */
+  --navbar-bg: #5F00A8;     /* Navbar roxa */
+}
+
+
+/* Tema escuro */
+.dark-mode {
+  --section-bg-odd: #2c2c2e;
+  --section-bg-even: #1f1f21;
+  --section-text-odd: #e0e0e0;
+  --section-text-even: #cccccc;
+
+  /* Cores neutras (tema escuro) */
+  --bg: #272727;
+  --text: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --border: #333333;
+  --navbar-bg: #1a202c;
+}
+
+.dark-mode .hero-section {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-mode .section-light {
+  background-color: #222;
+  color: white;
+}
+
+.dark-mode .section-dark {
+  background-color: #333;
+  color: white;
+}
+/* ===== RESET E ESTILOS BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Reset completo */
+html, body, #root {
+  width: 100%;
+  min-height: 100vh; /* Use viewport height */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.App {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding-top: 80px; /* Espaço para a navbar fixa */
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--navbar-bg);
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-light);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== SEÇÃO HERO ===== */
+.hero-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
+   margin: 0;
+  padding: 0;
+
+
+ background-color: var(--bg);
+   color: var(--text);            /* texto escuro, legível e suave */
+}
+.hero-content {
+  width:100%;
+
+  margin: 0 auto;
+ 
+}
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.greeting {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.name {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+  padding: 80px 0;
+  background: var(--section-bg, #f9f9f9);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  text-align: center;
+  position: relative;
+}
+.section-light {
+  background-color: var(--section-bg-odd);
+  color: var(--section-text-odd);
+}
+
+.section-dark {
+  background-color: var(--section-bg-even);
+  color: var(--section-text-even);
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(95, 0, 168, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    padding: 1rem 0;
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 0.5rem 2rem;
+  }
+
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.4rem;
+  }
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.section:nth-of-type(odd) {
+  background-color: var(--section-bg-odd);
+  color: var(--section-text-odd);
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.section:nth-of-type(even) {
+  background-color: var(--section-bg-even);
+  color: var(--section-text-even);
 }

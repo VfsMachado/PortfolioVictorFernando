@@ -1,12 +1,14 @@
 .about-section {
   padding: 4rem 0;
   background-color: #fff;
+  justify-content: center;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  
 }
 
 h2 {
