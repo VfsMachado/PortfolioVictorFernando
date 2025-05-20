@@ -1,0 +1,8 @@
+/* Skills.css */
+.skill-item {
+  transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+}

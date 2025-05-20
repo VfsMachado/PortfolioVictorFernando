@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
+import Skills from './components/skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import '@fontsource/permanent-marker';
 import './App.css';
 
 const App: React.FC = () => {
@@ -75,7 +77,7 @@ const App: React.FC = () => {
             <Skills/>
           </div>
         </section>
-        
+
         {/* Contato */}
         <section id="contact" className="section" aria-label="Contato">
           <div className="container">

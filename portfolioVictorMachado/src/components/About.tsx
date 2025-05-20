@@ -1,52 +1,21 @@
 import React from 'react';
-import './About.css';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="about-section">
-      <div className="container">
-        <h2>About</h2>
-        
-        <div className="about-content">
-          <p className="intro">
-            Hello, I'm <span className="highlight">Victor Fernando</span>, a Front End Developer based in Salvador, Brazil. 
-            I'm a passionate developer who loves coding, web technology and JavaScript.
-          </p>
-
-          <div className="timeline">
-            <div className="timeline-item">
-              <h3>My Journey Begins</h3>
-              <p>
-                My passion for coding started in 2015 when I first discovered web development through online courses. 
-                Since then, the love for creating digital experiences has only grown stronger.
-              </p>
-            </div>
-
-            <div className="timeline-item">
-              <h3>Early Challenges</h3>
-              <p>
-                I first learned HTML and CSS in 2016, but faced challenges when diving deeper into programming. 
-                Like many beginners, I found JavaScript complex without proper guidance, which led me to take a break.
-              </p>
-            </div>
-
-            <div className="timeline-item">
-              <h3>The Comeback</h3>
-              <p>
-                In 2020, I rediscovered my passion through freeCodeCamp and online communities. 
-                I committed to consistent learning and building projects, which transformed my skills and confidence.
-              </p>
-            </div>
-
-            <div className="timeline-item">
-              <h3>Current Focus</h3>
-              <p>
-                Now I'm more goal-oriented and focused than ever. I've built multiple web applications, 
-                solved numerous coding challenges, and currently specialize in React.js and modern frontend development.
-              </p>
-            </div>
-          </div>
-        </div>
+    <section
+      id="about"
+      className="w-full min-h-screen bg-[url('/images/muro.jpg')] bg-cover bg-center text-white flex items-center justify-center px-4 py-16"
+    >
+      <div className="max-w-4xl bg-black/50 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+        <h2 className="text-4xl font-bold text-yellow-400 text-center graffiti-font mb-6">
+          Quem sou eu
+        </h2>
+        <p className="text-lg leading-relaxed graffiti-font">
+          E aí, tudo certo? Eu sou <span className="text-pink-500">Victor Fernando</span>, desenvolvedor front-end que começou sua jornada com HTML e CSS lá em 2016 e desde então nunca mais parou.
+        </p>
+        <p className="mt-4 text-lg leading-relaxed graffiti-font">
+          Hoje me aprofundo em React e curto transformar ideias em códigos criativos. Vem comigo nessa jornada cheia de arte digital!
+        </p>
       </div>
     </section>
   );
