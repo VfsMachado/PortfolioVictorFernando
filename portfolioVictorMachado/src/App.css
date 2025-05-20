@@ -1,35 +1,34 @@
-/* ===== VARIÁVEIS GLOBAIS ===== */
-/* Tema claro */
+/* ======================= */
+/* ===== VARIÁVEIS ======= */
+/* ======================= */
+
+/* Tema Claro */
 :root {
   --section-bg-odd: #f0f0f3;
   --section-bg-even: #d1d1d5;
   --section-text-odd: #333333;
   --section-text-even: #1a1a1a;
 
-
   /* Cores principais */
-  --primary: #5F00A8;       /* Roxo principal */
-  --primary-light: #8A2BE2; /* Roxo mais claro */
-  --secondary: #A85F00;     /* Âmbar */
-  --accent: #9370DB;        /* Roxo médio */
+  --primary: #5F00A8;
+  --primary-light: #8A2BE2;
+  --secondary: #A85F00;
+  --accent: #9370DB;
 
-  /* Cores neutras (tema claro) */
-  --bg: #f5f5f7;            /* Fundo cinza claro */
-  --text: #212529;          /* Texto quase preto */
-  --card-bg: #ffffff;       /* Fundo de cards branco */
-  --border: #dee2e6;        /* Bordas cinza claro */
-  --navbar-bg: #5F00A8;     /* Navbar roxa */
+  /* Cores neutras */
+  --bg: #f5f5f7;
+  --text: #212529;
+  --card-bg: #ffffff;
+  --border: #dee2e6;
+  --navbar-bg: #5F00A8;
 }
 
-
-/* Tema escuro */
+/* Tema Escuro */
 .dark-mode {
   --section-bg-odd: #2c2c2e;
   --section-bg-even: #1f1f21;
   --section-text-odd: #e0e0e0;
   --section-text-even: #cccccc;
-
-  /* Cores neutras (tema escuro) */
   --bg: #272727;
   --text: #e0e0e0;
   --card-bg: #1e1e1e;
@@ -37,21 +36,28 @@
   --navbar-bg: #1a202c;
 }
 
+.dark-mode .hero-section,
+.dark-mode .section-light,
+.dark-mode .section-dark {
+  color: white;
+}
+
 .dark-mode .hero-section {
   background-color: #1a1a1a;
-  color: white;
 }
 
 .dark-mode .section-light {
   background-color: #222;
-  color: white;
 }
 
 .dark-mode .section-dark {
   background-color: #333;
-  color: white;
 }
-/* ===== RESET E ESTILOS BASE ===== */
+
+/* ======================= */
+/* ===== BASE RESET ====== */
+/* ======================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -59,58 +65,78 @@
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-
-/* Reset completo */
 html, body, #root {
   width: 100%;
-  min-height: 100vh; /* Use viewport height */
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ===== LAYOUT PRINCIPAL ===== */
+/* ======================= */
+/* ===== LAYOUT GERAL ==== */
+/* ======================= */
+
 .App {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
 
 main {
   flex: 1;
-  padding-top: 80px; /* Espaço para a navbar fixa */
-  padding-bottom: 2rem;
   width: 100%;
+  padding-top: 80px;
+  padding-bottom: 2rem;
 }
 
-/* ===== NAVBAR ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* ======================= */
+/* ===== NAVBAR ========= */
+/* ======================= */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
   background-color: var(--navbar-bg);
   color: white;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
-  margin: 0 auto;
   padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .nav-links {
   display: flex;
-  list-style: none;
   gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .nav-links a {
@@ -126,8 +152,8 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
   height: 2px;
+  width: 0;
   background-color: var(--primary-light);
   transition: width 0.3s;
 }
@@ -136,40 +162,25 @@ main {
   width: 100%;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+/* ======================= */
+/* ===== HERO SECTION ==== */
+/* ======================= */
 
-/* ===== SEÇÃO HERO ===== */
 .hero-section {
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
-   margin: 0;
-  padding: 0;
-
-
- background-color: var(--bg);
-   color: var(--text);            /* texto escuro, legível e suave */
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--text);
 }
+
 .hero-content {
-  width:100%;
-
+  width: 100%;
   margin: 0 auto;
- 
 }
-.App {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+
 .greeting {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -177,8 +188,8 @@ main {
 
 .name {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .tagline {
@@ -189,24 +200,30 @@ main {
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
-/* ===== SEÇÕES ===== */
+/* ======================= */
+/* ===== SEÇÕES ========= */
+/* ======================= */
+
 .section {
   padding: 80px 0;
   background: var(--section-bg, #f9f9f9);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--primary);
-  text-align: center;
-  position: relative;
+.section:nth-of-type(odd) {
+  background-color: var(--section-bg-odd);
+  color: var(--section-text-odd);
 }
+
+.section:nth-of-type(even) {
+  background-color: var(--section-bg-even);
+  color: var(--section-text-even);
+}
+
 .section-light {
   background-color: var(--section-bg-odd);
   color: var(--section-text-odd);
@@ -216,34 +233,29 @@ main {
   background-color: var(--section-bg-even);
   color: var(--section-text-even);
 }
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 2px;
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+
+  text-align: center;
+  position: relative;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
 
-/* ===== BOTÕES ===== */
+
+/* ======================= */
+/* ===== BOTÕES ========= */
+/* ======================= */
+
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
   font-weight: 600;
+  border: none;
   cursor: pointer;
   transition: all 0.3s;
-  border: none;
 }
 
 .btn-primary {
@@ -261,8 +273,21 @@ main {
   color: white;
 }
 
+/* ======================= */
+/* ===== FONTES ========= */
+/* ======================= */
 
-/* ===== RESPONSIVIDADE ===== */
+@import "@fontsource/permanent-marker";
+
+.graffiti-font {
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+}
+
+/* ======================= */
+/* ===== RESPONSIVO ===== */
+/* ======================= */
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -287,7 +312,6 @@ main {
     padding: 0.5rem 2rem;
   }
 
-
   .name {
     font-size: 2.5rem;
   }
@@ -295,12 +319,11 @@ main {
   .tagline {
     font-size: 1.4rem;
   }
-  }
 
   .section-title {
     font-size: 2rem;
   }
-
+}
 
 @media (max-width: 480px) {
   .name {
@@ -311,12 +334,171 @@ main {
     font-size: 1.2rem;
   }
 }
-.section:nth-of-type(odd) {
+
+@media (max-width: 390px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+/* ======================= */
+/* ===== PROJECTS SECTION === */
+/* ======================= */
+
+.projects-section {
+  padding: 4rem 0;
   background-color: var(--section-bg-odd);
   color: var(--section-text-odd);
 }
 
-.section:nth-of-type(even) {
-  background-color: var(--section-bg-even);
-  color: var(--section-text-even);
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.projects-filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  background: none;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--primary-light);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  color: var(--section-text-odd);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .projects-filters {
+    flex-wrap: wrap;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

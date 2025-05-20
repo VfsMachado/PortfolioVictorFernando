@@ -1,16 +1,46 @@
 import React from 'react';
+import './skills.css';
+
+import { FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaPhp, FaNodeJs, FaNpm, FaDatabase, FaCode } from 'react-icons/fa';
+import { DiJavascript1 } from 'react-icons/di';
+import { SiMysql } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+
+const skillCategories = [
+  {
+    title: "Tecnologias",
+    skills: [
+      { name: 'Git', icon: <FaGitAlt /> },
+      { name: 'GitHub', icon: <FaGithub /> },
+      { name: 'VSCode', icon: <VscVscode /> },
+      { name: 'HTML', icon: <FaHtml5 /> },
+      { name: 'CSS', icon: <FaCss3Alt /> },
+      { name: 'JavaScript', icon: <DiJavascript1 /> },
+      { name: 'PHP', icon: <FaPhp /> },
+      { name: 'MySQL', icon: <SiMysql /> },
+      { name: 'npm', icon: <FaNpm /> },
+    ],
+  },
+];
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="w-full py-16 bg-gray-900 text-white">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Skills</h2>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
-          <li className="bg-gray-800 p-4 rounded shadow hover:bg-gray-700">HTML</li>
-          <li className="bg-gray-800 p-4 rounded shadow hover:bg-gray-700">CSS</li>
-          <li className="bg-gray-800 p-4 rounded shadow hover:bg-gray-700">JavaScript</li>
-          <li className="bg-gray-800 p-4 rounded shadow hover:bg-gray-700">React</li>
-        </ul>
+    <section id="skills" className="skills-section">
+      <div className="container">
+        <h2 className="skills-title">Skills</h2>
+
+        {skillCategories.map((category, idx) => (
+          <div key={idx} className="skill-category">
+            <h3 className="skill-category-title">{category.title}</h3>
+            <div className="skills-list">
+              {category.skills.map((skill, skillIdx) => (
+                <span key={skillIdx} className="skill-item">
+                  <span className="skill-icon">{skill.icon}</span> {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

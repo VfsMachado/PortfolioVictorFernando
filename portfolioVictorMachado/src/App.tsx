@@ -5,30 +5,21 @@ import Projects from './components/Projects';
 import Skills from './components/skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import '@fontsource/permanent-marker';
 import './App.css';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
- useEffect(() => {
-  const savedTheme = localStorage.getItem("theme");
-
-  if (savedTheme === "light") {
-    setDarkMode(false);
-    document.documentElement.classList.remove("dark-mode");
-  } else {
-    setDarkMode(true);
-    document.documentElement.classList.add("dark-mode");
-  }
-}, []);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    setDarkMode(savedTheme !== "light"); // Se não for light, ativa dark
+  }, []);
 
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
     localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
-    document.documentElement.classList.toggle('dark-mode', newDarkMode);
   };
 
   const toggleMenu = () => {
@@ -36,7 +27,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <Navbar
         menuOpen={menuOpen}
         toggleMenu={toggleMenu}
@@ -71,10 +62,11 @@ const App: React.FC = () => {
             <Projects />
           </div>
         </section>
-         {/* skills */}
+
+        {/* Skills */}
         <section id="skills" className="section" aria-label="Skills">
           <div className="container">
-            <Skills/>
+            <Skills />
           </div>
         </section>
 
@@ -83,7 +75,6 @@ const App: React.FC = () => {
           <div className="container">
             <Contact />
           </div>
-          
         </section>
       </main>
 
