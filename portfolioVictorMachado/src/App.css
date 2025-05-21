@@ -25,7 +25,7 @@
 
 /* Tema Escuro */
 .dark-mode {
-  --section-bg-odd: #2c2c2e;
+  --section-bg-odd: hsl(240, 2%, 18%);
   --section-bg-even: #1f1f21;
   --section-text-odd: #e0e0e0;
   --section-text-even: #cccccc;
@@ -424,10 +424,11 @@ main {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
+
 
 .project-card {
   background-color: var(--card-bg);
@@ -459,9 +460,7 @@ main {
   transform: scale(1.05);
 }
 
-.project-info {
-  padding: 1.5rem;
-}
+
 
 .project-category {
   display: inline-block;
@@ -501,4 +500,47 @@ main {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+}
+.project-info {
+  padding: 1rem;
+  background: #1f1f29;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-tech {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tech-tag {
+  background-color: #333;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  background-color: #212529;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #0056b3;
+}
+html {
+  scroll-behavior: smooth;
 }
