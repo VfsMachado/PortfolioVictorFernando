@@ -1,4 +1,5 @@
 /* Navbar.css */
+
 .navbar {
   background-color: var(--navbar-bg, #2c3e50);
   color: var(--navbar-text, #ffffff);

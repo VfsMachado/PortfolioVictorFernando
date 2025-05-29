@@ -1,43 +1,113 @@
+/* ======================= */
+/* ===== SKILLS ========= */
+/* ======================= */
+
 .skills-section {
-  padding: 2rem 0;
-  background-color: #2c2c2e;
+  padding: 4rem 0;
+  background-color: var(--section-bg-even);
+  color: var(--section-text-even);
   text-align: center;
 }
 
 .skills-title {
   font-size: 2rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.skills-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--section-text-even);
+  opacity: 0.9;
 }
 
 .skill-category {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .skill-category-title {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-light);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 600px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .skill-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background-color: #000000;
-  border-radius: 8px;
-  padding: 0.75rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-weight: bold;
+  gap: 0.75rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-light);
 }
 
 .skill-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ======================= */
+/* ===== RESPONSIVO ===== */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .skill-category-title {
+    font-size: 1.3rem;
+  }
 }

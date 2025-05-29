@@ -7,7 +7,7 @@ const Projects = () => {
       <h2 className="section-title">Meus Projetos</h2>
       <div className="projects-grid">
         {projects.map(project => (
-          <div key={project.id} >
+          <div key={project.id} className="project-card">
             <div className="project-image-container">
               <img 
                 src={`/${project.imageUrl}`} // acessando a imagem da pasta public
