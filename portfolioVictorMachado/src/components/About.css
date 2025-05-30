@@ -1,66 +1,118 @@
-.about-section {
-  padding: 4rem 0;
-  background-color: #333333; /* Fundo claro, como o exemplo */
-  min-height: 100vh;
+/* ======================= */
+/* ===== ABOUT SECTION === */
+/* ======================= */
 
+.about-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--section-bg-odd);
+  color: var(--section-text-odd);
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  margin: 20px; /* Margem externa */
-  border-radius: 8px; /* Borda arredondada */
 }
 
-.container {
-  max-width: 80%; /* Como no exemplo */
+.about-container {
+  max-width: 1200px;
   margin: 0 auto;
-
-  padding: 20px; /* Espaçamento interno */
-  background-color: #333333; /* Fundo branco para destacar texto */
-  border-radius: 8px; /* Borda arredondada */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra leve para profundidade */
+  width: 100%;
 }
 
-.graffiti-title {
-  font-family: 'BlowBrush', cursive;
-  font-size: 3rem;
-  color: #111;
+.about-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
-h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #ffffff;
-  font-family: 'BlowBrush', cursive; /* Se quiser aplicar fonte graffiti também aqui */
+.about-title {
+  font-family:  cursive;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--primary-light);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  color: var(--section-text-odd);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .about-content {
-  line-height: 1.6;
-  color: #ffffff; /* Texto mais escuro, como no exemplo */
-  font-size: 16px; /* Tamanho de fonte padrão */
-  font-family: Arial, sans-serif; /* Fonte base padrão, pode mudar se quiser */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.intro {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  text-align: center;
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--section-text-odd);
 }
 
 .highlight {
-  color: #4299e1;
+  color: var(--primary-light);
   font-weight: 600;
 }
 
-/* timeline continua igual */
+.about-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about-photo img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline Styles */
+.timeline-section {
+  margin-top: 4rem;
+  grid-column: 1 / -1;
+}
+
+.timeline-title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: cursive;
+}
+
 .timeline {
   position: relative;
   padding-left: 2rem;
-  border-left: 2px solid #e2e8f0;
+  border-left: 2px solid var(--primary-light);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .timeline-item {
@@ -75,8 +127,8 @@ h2 {
 }
 
 .timeline-item h3 {
-  font-size: 1.25rem;
-  color: #2d3748;
+  font-size: 1.3rem;
+  color: var(--text);
   margin-bottom: 0.5rem;
   position: relative;
 }
@@ -89,35 +141,49 @@ h2 {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: #4299e1;
-  border: 3px solid #00527e;
+  background-color: var(--primary);
+  border: 3px solid var(--primary-light);
 }
 
 .timeline-item p {
   font-size: 1rem;
+  color: var(--section-text-odd);
+  line-height: 1.6;
 }
 
-.about-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap; /* Para responsividade */
+.timeline-date {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
 }
 
-.about-photo img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #5F00A8; /* Borda amarela */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* ======================= */
+/* ===== RESPONSIVO ===== */
+/* ======================= */
+
+@media (max-width: 992px) {
+  .about-content {
+    gap: 2rem;
+  }
+  
+  .about-photo img {
+    width: 240px;
+    height: 240px;
+  }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 20px 10px; /* leve ajuste para mobile */
-    max-width: 100%;
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .about-title::after {
+    margin: 1rem auto 0;
   }
   
   .timeline {
@@ -129,21 +195,26 @@ h2 {
   }
 }
 
-/* Fonte BlowBrush */
-@font-face {
-  font-family: 'BlowBrush';
-  src: url('/fonts/blowbrush.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@media (max-width: 768px) {
-  .about-wrapper {
-    flex-direction: column;
+@media (max-width: 480px) {
+  .about-section {
+    padding: 4rem 1rem;
   }
-
+  
+  .about-title {
+    font-size: 2.2rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+  
   .about-photo img {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .timeline-title {
+    font-size: 1.8rem;
   }
 }
 

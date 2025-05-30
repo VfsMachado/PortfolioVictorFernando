@@ -1,9 +1,31 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import './Footer.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="text-center py-4 text-sm text-gray-500">
-      <p>&copy; {new Date().getFullYear()} Victor Machado. Todos os direitos reservados.</p>
+    <footer className="footer">
+      <div className="footer-content">
+       
+
+        {/* Direitos autorais */}
+        <div className="copyright">
+          <p>
+            &copy; {currentYear} Victor Fernando. Todos os direitos reservados.
+          </p>
+        </div>
+
+        {/* Voltar ao topo */}
+        <button 
+          className="back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Voltar ao topo"
+        >
+          ↑
+        </button>
+      </div>
     </footer>
   );
 };

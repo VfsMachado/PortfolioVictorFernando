@@ -1,0 +1,103 @@
+/* ======================= */
+/* ===== FOOTER ========== */
+/* ======================= */
+
+.footer {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text, white);
+  padding: 2rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--navbar-text, white);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-light);
+  transform: translateY(-3px);
+}
+
+.copyright p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.back-to-top {
+  background-color: var(--primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ======================= */
+/* ===== RESPONSIVO ====== */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .footer-content {
+    gap: 1rem;
+  }
+  
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    font-size: 1.3rem;
+  }
+  
+  .copyright p {
+    font-size: 0.85rem;
+  }
+  
+  .back-to-top {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}

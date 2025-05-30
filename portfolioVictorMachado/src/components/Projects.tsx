@@ -1,6 +1,6 @@
 import React from 'react';
 import { projects } from '../projectsData';
-
+import './projects.css'; // Import direto
 const Projects = () => {
   return (
     <section id="projetos" className="projects-section">
@@ -10,7 +10,7 @@ const Projects = () => {
           <div key={project.id} className="project-card">
             <div className="project-image-container">
               <img 
-                src={`/${project.imageUrl}`} // acessando a imagem da pasta public
+                src={`/${project.imageUrl}`}
                 alt={project.title} 
                 className="project-image" 
               />
@@ -29,27 +29,31 @@ const Projects = () => {
               )}
 
               <div className="project-links">
-                {project.demoLink && (
-                  <a
-                    href={project.demoLink}
-                    className="demo-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fas fa-external-link-alt"></i> Demo
-                  </a>
-                )}
-                {project.codeLink && (
-                  <a
-                    href={project.codeLink}
-                    className="code-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-github"></i> Código
-                  </a>
-                )}
-              </div>
+  {project.demoLink && (
+    <a
+      href={project.demoLink}
+      className="project-btn demo-btn" // Classes atualizadas
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Ver demo do projeto ${project.title}`}
+    >
+      <i className="fas fa-external-link-alt"></i>
+      <span>Demo</span>
+    </a>
+  )}
+  {project.codeLink && (
+    <a
+      href={project.codeLink}
+      className="project-btn code-btn" // Classes atualizadas
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Ver código do projeto ${project.title}`}
+    >
+      <i className="fab fa-github"></i>
+      <span>Código</span>
+    </a>
+  )}
+</div>
             </div>
           </div>
         ))}
