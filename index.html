@@ -1,195 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Portfólio - Dev</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Victor Fernando</h1>
-            <div class="title">Desenvolvedor</div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <ul id="menu-list">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <p>Sou estudante de Ciência da Computação na Unijorge, apaixonado por tecnologia e desenvolvimento web. Tenho conhecimentos em HTML, CSS, JavaScript, PHP e MySQL, com experiência prática em desenvolvimento de sistemas, suporte técnico e administração. Busco constantemente evoluir minhas habilidades e contribuir ativamente em projetos que unam eficiência, interatividade e boas práticas de código.</p>
-            <p>Já atuei como auxiliar administrativo e de T.I., e também na área de Suporte Técnico de Redes, aplicando conhecimento em ferramentas como PRTG, IPAM, Hubsoft e Monday. Me destaco por minha dedicação, agilidade, comunicação clara e espírito de equipe.</p>
-        </div>
-    </section>
-
-    <section id="projetos">
-        <div class="projects-grid">
-
-            <!-- Projeto 1 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(atendimentochamados.png);"></div>
-                <div class="project-info">
-                    <h3>Sistema de Chamados</h3>
-                    <p>Ferramenta simples para abertura e acompanhamento de chamados técnicos, integrando funcionalidades de rede com interface acessível.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/AtendimentoChamados-vfsmachado/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/AtendimentoChamados-vfsmachado" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 2 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(landingpage.png);"></div>
-                <div class="project-info">
-                    <h3>Cantinho do Barna</h3>
-                    <p>Landing page desenvolvida para um pequeno negócio local, com foco em apresentação visual e usabilidade em dispositivos móveis.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/LandingPage/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/LandingPage" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 3 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(youtubeclone.png);"></div>
-                <div class="project-info">
-                    <h3>YouTube Clone</h3>
-                    <p>Clone visual do YouTube com layout fiel ao original, modo escuro, estrutura de vídeo e responsividade total.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/YouTube-Clone/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/YouTube-Clone" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 4 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(portfoliomodelo.png);"></div>
-                <div class="project-info">
-                    <h3>Portfolio Modelo</h3>
-                    <p>Template de portfólio moderno, limpo e responsivo feito em HTML e CSS. Ideal para profissionais que querem apresentar seus projetos com estilo e simplicidade. Código organizado e fácil de personalizar.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/PortfolioModelo/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/PortfolioModelo" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 5 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(testeautomind.png);"></div>
-                <div class="project-info">
-                    <h3>Teste Vaga - Automind</h3>
-                    <p>Desafio técnico proposto em um processo seletivo, com foco em construção de uma aplicação de cadastro utilizando C# no terminal.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">C#</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/testeVagaAutomind/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/testeVagaAutomind" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projeto 6 -->
-            <div class="project-card">
-                <div class="project-image" style="background-image: url(CadastroCliente.png);"></div>
-                <div class="project-info">
-                    <h3>Teste Vaga - Cadastro e listagem de produtos</h3>
-                    <p>Desafio técnico proposto em um processo seletivo, com foco em construção de uma aplicação de cadastro e listagem de produtos em uma linguagem a escolha propria</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">C#</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://vfsmachado.github.io/CadastroeListagemProdutos/" class="demo-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                        <a href="https://github.com/VfsMachado/CadastroeListagemProdutos" class="code-link" target="_blank">
-                            <i class="fab fa-github"></i> Código
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Vamos conversar? Me envie um e-mail ou me adicione no LinkedIn!</p>
-            <p><strong>Email:</strong> <a href="mailto:vfsmachado27@gmail.com">vfsmachado27@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vfsmachado27" target="_blank">linkedin.com/in/vfsmachado27</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/VfsMachado" target="_blank">github.com/VfsMachado</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> Victor Fernando. Todos os direitos reservados.</p>
-            <div class="social-links">
-                <a href="https://github.com/VfsMachado" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vfsmachado27" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
+    <link rel="icon" type="image/svg+xml" href="src\assets\RATAO[.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Victor Machado</title>
+    <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+/>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script src="script.js"></script>
-</body>
+  (function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (!savedTheme || savedTheme === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

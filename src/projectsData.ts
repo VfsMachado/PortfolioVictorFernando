@@ -31,7 +31,7 @@ export const projects: Project[] = [
     id: 3,
     title: 'YouTube Clone',
     description: 'Clone visual do YouTube com layout fiel ao original, modo escuro, estrutura de vídeo e responsividade total.',
-    imageUrl: 'youtubeclone.png',
+   imageUrl: 'youtubeclone.png',
     techs: ['HTML', 'CSS', 'JavaScript'],
     demoLink: 'https://vfsmachado.github.io/YouTube-Clone/',
     codeLink: 'https://github.com/VfsMachado/YouTube-Clone',

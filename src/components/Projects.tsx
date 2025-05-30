@@ -8,14 +8,19 @@ const Projects = () => {
       <div className="projects-grid">
         {projects.map(project => (
           <div key={project.id} className="project-card">
-            <div className="project-image-container">
-              <img 
-                src={`/${project.imageUrl}`}
-                alt={project.title} 
-                className="project-image" 
-              />
-            </div>
-
+          <div className="project-image-container">
+  <img 
+    src={project.imageUrl}
+    alt={project.title}
+    className="project-image"
+    style={{
+      width: '100%',
+      height: '200px',
+      objectFit: 'cover',
+      objectPosition: 'center'
+    }}
+  />
+</div>
             <div className="project-info">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
