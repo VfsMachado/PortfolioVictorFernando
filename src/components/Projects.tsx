@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { projects } from '../projectsData';
 import './projects.css'; // Import direto
 const Projects = () => {

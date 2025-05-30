@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './about.css';
 import foto7 from '../assets/foto7.jpg';
 

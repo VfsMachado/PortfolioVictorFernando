@@ -1,7 +1,7 @@
 import React from 'react';
 import './skills.css';
 
-import { FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaPhp, FaNodeJs, FaNpm, FaDatabase, FaCode } from 'react-icons/fa';
+import { FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaPhp, FaNpm, } from 'react-icons/fa';
 import { DiJavascript1 } from 'react-icons/di';
 import { SiMysql } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
