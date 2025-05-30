@@ -8,26 +8,33 @@ import Footer from './components/Footer';
 import './App.css';
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-
-  useEffect(() => {
-    // Verificação mais segura do tema
+  
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
     const savedTheme = localStorage.getItem("theme");
-    setDarkMode(savedTheme ? savedTheme === 'dark' : false);
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+ useEffect(() => {
     
-    // Aplicar classe ao body para melhor suporte a modal
-    document.body.className = darkMode ? 'dark-mode' : '';
-  }, [darkMode]);
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    
 
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
   const toggleDarkMode = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+    setDarkMode(prevMode => !prevMode);
   };
 
   return (
     <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      {/* Navbar simplificado - controle interno do menu */}
       <Navbar
         toggleDarkMode={toggleDarkMode}
         darkMode={darkMode}
@@ -39,7 +46,7 @@ const App: React.FC = () => {
           id="home" 
           className="section hero-section" 
           aria-label="Introdução"
-          tabIndex={-1} // Para gerenciamento de foco
+          tabIndex={-1} 
         >
           <div className="container">
             <div className="hero-content">
