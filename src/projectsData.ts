@@ -59,8 +59,17 @@ export const projects: Project[] = [
     title: 'Teste Vaga - Cadastro e listagem de produtos',
     description: 'Desafio técnico proposto em um processo seletivo, com foco em construção de uma aplicação de cadastro e listagem de produtos em uma linguagem a escolha propria',
     imageUrl: 'CadastroCliente.png',
-    techs: ['C#'],
+    techs: ['C#', 'HTML', 'CSS', 'JavaScript'],
     demoLink: 'https://vfsmachado.github.io/CadastroeListagemProdutos/',
     codeLink: 'https://github.com/VfsMachado/CadastroeListagemProdutos',
+  },
+  {
+    id: 7,
+    title: 'Teste Vaga - NeuroFocus',
+    description: 'Landing page desenvolvida do desafio de estágio da Objetivo Sistemas',
+    imageUrl: 'NeuroFocus.png',
+    techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    demoLink: 'https://vfsmachado.github.io/TesteVagaObjetivoSistemas/',
+    codeLink: 'https://github.com/VfsMachado/TesteVagaObjetivoSistemas',
   },
 ];
