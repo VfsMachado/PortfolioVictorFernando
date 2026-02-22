@@ -38,12 +38,12 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Portfolio Modelo',
-    description: 'Template de portfólio moderno, limpo e responsivo feito em HTML e CSS. Ideal para profissionais que querem apresentar seus projetos com estilo e simplicidade. Código organizado e fácil de personalizar.',
-    imageUrl: 'portfoliomodelo.png',
-    techs: ['HTML', 'CSS'],
-    demoLink: 'https://vfsmachado.github.io/PortfolioModelo/',
-    codeLink: 'https://github.com/VfsMachado/PortfolioModelo',
+    title: 'campo-radar',
+    description: 'Sistema de monitoramento em tempo real para equipes de campo via Telegram.',
+    imageUrl: 'radarcampo.png',
+    techs: ['JavaScript', 'Telegram Bot API'],
+    demoLink: 'https://t.me/RadarITSBot',
+    codeLink: 'https://github.com/VfsMachado/campo-radar',
   },
   {
     id: 5,
@@ -71,5 +71,14 @@ export const projects: Project[] = [
     techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
     demoLink: 'https://vfsmachado.github.io/TesteVagaObjetivoSistemas/',
     codeLink: 'https://github.com/VfsMachado/TesteVagaObjetivoSistemas',
+  },
+  {
+    id: 8,
+    title: 'Teste Vaga - Dashboard-objetivoSistemas',
+    description: 'Este projeto é um MVP (Minimum Viable Product) de um painel de vendas, desenvolvido como parte de um desafio de frontend.',
+    imageUrl: 'painelvendas.png',
+    techs: ['HTML', 'CSS', 'JavaScript'],
+    demoLink: 'https://vfsmachado.github.io/Dashboard-objetivoSistemas/',
+    codeLink: 'https://github.com/VfsMachado/Dashboard-objetivoSistemas',
   },
 ];
